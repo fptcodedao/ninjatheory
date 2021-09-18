@@ -1,10 +1,27 @@
-import React, { lazy, Suspense } from 'react';
-import { Redirect, Router, Switch, Route } from 'react-router-dom';
+import React, { lazy, Suspense, useEffect } from 'react';
+import { Redirect, Router, Switch, Route, useRouteMatch } from 'react-router-dom';
 import history from './routerHistory';
+import Header from './components/layouts/Header';
+import Footer from './components/layouts/Footer';
+import { ROUTE } from './configs/constants';
+import AOS from 'aos';
+
+import './styles/preloader.scss';
+import './styles/app.scss';
+import 'aos/dist/aos.css';
 
 const Home = lazy(() => import('./views/Home/index'))
+const About = lazy(() => import('./views/About/index'))
+const Opportunities = lazy(() => import('./views/Careers/Opportunities'))
+const Games = lazy(() => import('./views/Games/index'))
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration : 400
+    })
+    // AOS.refresh();
+  });
   return (
     <>
       <Router history={history}>
@@ -20,12 +37,27 @@ function App() {
             </div>
           </div>
         }>
-          <Switch>
-            <Route path='/' exact>
-              <Home />
-            </Route>
-            <Redirect from='*' to='/' />
-          </Switch>
+          <Header />
+          <div className="main transition-all duration-500 flex flex-col pt-85 lg:pt-105 min-h-screen">
+            <Switch>
+              <Route path={ROUTE.HOME} exact>
+                <Home />
+              </Route>
+              <Route path={ROUTE.ABOUT}>
+                <About />
+              </Route>
+              <Route path="/careers/opportunities">
+                <Opportunities />
+              </Route>
+              <Route path={ROUTE.GAMES}>
+                <Games />
+              </Route>
+              <Redirect from='*' to={ROUTE.HOME} />
+            </Switch>
+          </div>
+          {
+          <Footer />
+          }
         </Suspense>
       </Router>
     </>
