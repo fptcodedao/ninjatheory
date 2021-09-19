@@ -1,12 +1,23 @@
-import React from 'react'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import AwesomeSlider from 'react-awesome-slider';
-// @ts-ignore
-// import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import { clearAccount } from '../../actions/accountAction';
+import ImportModal from '../../components/Account/ImportModal';
+import { modalService } from '../../components/Commons/Modals/ModalListener';
+import Slider from '../../components/Slider/Slider';
 import './Home.scss';
 
 const Home: React.FC = () => {
-  // const
+  const { address } = useSelector((state: any) => state.account);
+  const dispatch = useDispatch();
+
+  function disconnectAccount() {
+    dispatch(clearAccount());
+    localStorage.clear();
+  }
+  function openImportModal() {
+    modalService.show(ImportModal);
+  }
   return (
     <>
       <div className="fixed overflow-hidden inset-0 bg-black">
@@ -22,100 +33,13 @@ const Home: React.FC = () => {
               id="slide"
               className="h-screen fixed inset-0 slide"
             >
-              <div className="slides">
-                <div className="slide current">
-                  <div
-                    className="image-container absolute inset-0 overflow-hidden">
-                    <img
-                      alt=""
-                      className="h-full w-full object-cover hidden md:block lazy-load lazy-load-transition-loaded"
-                      src="https://ninjatheory.azureedge.net/site/site/assets/large_home_senua_saga_1_f7461080d7.jpg"
-                      style={{ transform: "translate(0px, 0px)" }}
-                    />
-                    <img
-                      alt=""
-                      data-src="https://ninjatheory.azureedge.net/site/site/assets/home_senua_saga_mob_1_4eddd70b6c.jpg"
-                      className="h-full w-full object-cover md:hidden lazy-load"
-                    />
-                  </div>
-                </div>
-                <div className="slide">
-                  <div
-                    className="image-container absolute inset-0 overflow-hidden">
-                    <img
-                      alt=""
-                      className="h-full w-full object-cover hidden md:block lazy-load lazy-load-transition-loaded"
-                      style={{ transform: "translate(0px, 0px)" }}
-                      src="https://ninjatheory.azureedge.net/site/site/assets/large_home_senua_saga_2_8b028ea00e.jpg"
-                    />
-                    <img
-                      alt=""
-                      data-src="https://ninjatheory.azureedge.net/site/site/assets/home_senua_saga_mob_2_06552706a4.jpg"
-                      className="h-full w-full object-cover md:hidden lazy-load"
-                    />
-                  </div>
-                </div>
-                <div className="slide">
-                  <div
-                    className="image-container absolute inset-0 overflow-hidden"
-                  >
-                    <img
-                      alt=""
-                      className="h-full w-full object-cover hidden md:block lazy-load lazy-load-transition-loaded"
-                      style={{ transform: "translate(0px, 0px)" }}
-                      src="https://ninjatheory.azureedge.net/site/site/assets/large_home_senua_saga_3_455055d0e8.jpg"
-                    />
-                    <img
-                      alt=""
-                      data-src="https://ninjatheory.azureedge.net/site/site/assets/home_senua_saga_mob_3_dfed2f2ef1.jpg"
-                      className="h-full w-full object-cover md:hidden lazy-load"
-                    />
-                  </div>
-                </div>
-                <div
-                  className="slide is-new"
-                >
-                  <div
-                    className="image-container absolute inset-0 overflow-hidden"
-                  >
-                    <img
-                      alt=""
-                      className="h-full w-full object-cover hidden md:block lazy-load lazy-load-transition-loaded"
-                      src="https://ninjatheory.azureedge.net/site/site/assets/large_home_mara_1_1153e5eb27.jpg"
-                    />
-                    <img
-                      alt=""
-                      data-src="https://ninjatheory.azureedge.net/site/site/assets/home_mara_mob_1_3f07bed9e1.jpg"
-                      className="h-full w-full object-cover md:hidden lazy-load"
-                    />
-                  </div>
-                </div>
-                <div className="slide">
-                  <div
-                    className="image-container absolute inset-0 overflow-hidden">
-                    <img
-                      alt=""
-                      className="h-full w-full object-cover hidden md:block lazy-load lazy-load-transition-loaded"
-                      style={{ transform: "translate(0px, 0px)" }}
-                      src="https://ninjatheory.azureedge.net/site/site/assets/large_home_insight_1_014c579c4d.jpg"
-                    />
-                    <img
-                      alt=""
-                      data-src="https://ninjatheory.azureedge.net/site/site/assets/home_insight_mob_1_272f74ecc2.jpg"
-                      className="h-full w-full object-cover md:hidden lazy-load"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-gradient absolute inset-0" />
+              <Slider />
             </section>
           </div>
           <div className="h-full w-full flex flex-col flex-wrap lg:flex-row justify-end lg:justify-between lg:items-center relative z-40">
             <div className="-bg-red-300 w-full flex flex-col flex-wrap lg:flex-row justify-end lg:justify-between lg:items-center relative z-40 outer-wrapper">
-              <div className="home-navigation-wrapper hidden lg:block">
-                <div
-                  className="invisible"
-                >
+              <div className="home-navigation-wrapper block">
+                <div className="visible hidden lg:block">
                   <h1>
                     <span className="sr-only">Ninja Theory</span>
                     <svg
@@ -195,10 +119,7 @@ const Home: React.FC = () => {
                     </svg>
                   </h1>
                 </div>
-                <div
-                  className="invisible"
-                  style={{ opacity: 1, visibility: "inherit" }}
-                >
+                <div className="visible hidden lg:block">
                   <nav
                     id="navigation"
                     aria-label="main navigation"
@@ -249,6 +170,26 @@ const Home: React.FC = () => {
                       </li>
                     </ul>
                   </nav>
+                </div>
+                <div className="visible connect-wallet flex nav flex-col items-center w-2/3">
+                {
+                  address ? (
+                    <div className="dropdown inline-block relative">
+                      <button className="address">
+                        <span className="mr-1">{address}</span>
+                      </button>
+                      <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
+                        <li>
+                          <button className="rounded-t bg-dark-500 text-white py-2 px-4 block whitespace-no-wrap" onClick={disconnectAccount}>Disconnect</button>
+                        </li>
+                      </ul>
+                    </div>
+                  ) : (
+                    <button className="btn-connect-wallet" onClick={openImportModal}>
+                      Connect Wallet
+                    </button>
+                  )
+                }
                 </div>
               </div>
               <div className="mini-carousel-wrapper">

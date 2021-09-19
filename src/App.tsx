@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useEffect } from 'react';
-import { Redirect, Router, Switch, Route, useRouteMatch } from 'react-router-dom';
+import { Redirect, Router, Switch, Route } from 'react-router-dom';
 import history from './routerHistory';
 import Header from './components/layouts/Header';
 import Footer from './components/layouts/Footer';
@@ -9,6 +9,10 @@ import AOS from 'aos';
 import './styles/preloader.scss';
 import './styles/app.scss';
 import 'aos/dist/aos.css';
+import Web3 from 'web3';
+import { Web3ReactProvider } from '@web3-react/core';
+import { provider } from 'web3-core';
+import { ModalListener } from './components/Commons/Modals/ModalListener';
 
 const Home = lazy(() => import('./views/Home/index'))
 const About = lazy(() => import('./views/About/index'))
@@ -20,10 +24,13 @@ function App() {
     AOS.init({
       duration : 400
     })
-    // AOS.refresh();
   });
+  function getLibrary(provider: provider) {
+    return new Web3(provider)
+  }
   return (
     <>
+      <Web3ReactProvider getLibrary={getLibrary}>
       <Router history={history}>
         <Suspense fallback={
           <div className="preloader-overlay">
@@ -60,6 +67,8 @@ function App() {
           }
         </Suspense>
       </Router>
+      <ModalListener />
+      </Web3ReactProvider>
     </>
   );
 }
