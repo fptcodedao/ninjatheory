@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import { ROUTE } from '../../configs/constants';
@@ -222,30 +223,30 @@ const Footer: React.FC = () => {
                     </a>
                   </li>
                   <li className="py-2 md:py-3 md:mr-3">
-                    <a
-                      href="/candidate-privacy-policy"
+                    <Link
+                      to="/candidate-privacy-policy"
                       className="text-white font-roboto md:font-black uppercase text-14 block no-focus text-center md:text-left transition-opacity hover:opacity-50 duration-150"
                     >
                       <span tabIndex={-1} className="kb-focus flex">
 
                         Candidate Privacy Policy
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="py-2 md:py-3 md:mr-3">
-                    <a
-                      href="/dmca-policy"
+                    <Link
+                      to="/dmca-policy"
                       className="text-white font-roboto md:font-black uppercase text-14 block no-focus text-center md:text-left transition-opacity hover:opacity-50 duration-150"
                     >
                       <span tabIndex={-1} className="kb-focus flex">
 
                         DMCA Policy
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a
-                      href="/about/#"
+                      href="#"
                       className="text-white font-roboto md:font-black uppercase text-14 block no-focus text-center md:text-left transition-opacity hover:opacity-50 duration-150"
                     >
                       <span tabIndex={-1} className="kb-focus flex">

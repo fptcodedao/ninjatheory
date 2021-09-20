@@ -3,6 +3,8 @@ export const ROUTE = {
   ABOUT: '/about',
   CAREERS: '/careers',
   GAMES: '/games',
+  CandidatePrivacyPolicy: '/candidate-privacy-policy',
+  DmcaPolicy: '/dmca-policy',
 };
 export const WALLET_TYPE = {
   METAMASK: "metamask",

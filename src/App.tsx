@@ -13,11 +13,16 @@ import Web3 from 'web3';
 import { Web3ReactProvider } from '@web3-react/core';
 import { provider } from 'web3-core';
 import { ModalListener } from './components/Commons/Modals/ModalListener';
+import Careers from './views/Careers/Careers';
 
 const Home = lazy(() => import('./views/Home/index'))
 const About = lazy(() => import('./views/About/index'))
 const Opportunities = lazy(() => import('./views/Careers/Opportunities'))
+const LifeAtNinja = lazy(() => import('./views/Careers/LifeAtNinja'))
+const LifeInCambridge = lazy(() => import('./views/Careers/LifeInCambridge'))
 const Games = lazy(() => import('./views/Games/index'))
+const CandidatePrivacyPolicy = lazy(() => import('./views/CandidatePrivacyPolicy/index'))
+const DmcaPolicy = lazy(() => import('./views/DmcaPolicy/index'))
 
 function App() {
   useEffect(() => {
@@ -53,11 +58,27 @@ function App() {
               <Route path={ROUTE.ABOUT}>
                 <About />
               </Route>
-              <Route path="/careers/opportunities">
-                <Opportunities />
+              <Route path="/careers">
+                <Careers>
+                  <Route path="/careers/opportunities">
+                    <Opportunities />
+                  </Route>
+                  <Route path="/careers/life-at-ninja">
+                    <LifeAtNinja />
+                  </Route>
+                  <Route path="/careers/life-in-cambridge">
+                    <LifeInCambridge />
+                  </Route>
+                </Careers>
               </Route>
               <Route path={ROUTE.GAMES}>
                 <Games />
+              </Route>
+              <Route path={ROUTE.CandidatePrivacyPolicy}>
+                <CandidatePrivacyPolicy />
+              </Route>
+              <Route path={ROUTE.DmcaPolicy}>
+                <DmcaPolicy />
               </Route>
               <Redirect from='*' to={ROUTE.HOME} />
             </Switch>
