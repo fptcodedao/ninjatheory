@@ -58,9 +58,9 @@ const LifeInCambridge: React.FC = () => {
             <div>
               <div className="relative overflow-hidden pb-375/160 md:pb-940/530 bg-nt-grey">
                 <img
-                  data-src="https://ninjatheory.azureedge.net/site/site/assets/careers_cambridge2_940x530_7dd71dfff2_c5dccaa808.jpg"
+                  src="https://ninjatheory.azureedge.net/site/site/assets/careers_cambridge2_940x530_7dd71dfff2_c5dccaa808.jpg"
                   alt=""
-                  className="lazy-load-transition absolute h-full w-full object-cover"
+                  className="lazy-load-transition lazy-load-transition-loaded absolute h-full w-full object-cover"
                 />
               </div>
             </div>
@@ -110,9 +110,9 @@ const LifeInCambridge: React.FC = () => {
             <div>
               <div className="relative overflow-hidden pb-375/160 md:pb-940/530 bg-nt-grey">
                 <img
-                  data-src="https://ninjatheory.azureedge.net/site/site/assets/careers_cambridge1_940x530_2645d358b4_1931fff4f7.jpg"
+                  src="https://ninjatheory.azureedge.net/site/site/assets/careers_cambridge1_940x530_2645d358b4_1931fff4f7.jpg"
                   alt=""
-                  className="lazy-load-transition absolute h-full w-full object-cover"
+                  className="lazy-load-transition lazy-load-transition-loaded absolute h-full w-full object-cover"
                 />
               </div>
             </div>

@@ -1,0 +1,53 @@
+.career-carousel .swiper-slide {
+  width: 150px;
+}
+@media (min-width: 768px) {
+  .career-carousel .swiper-slide {
+    width: 200px;
+  }
+}
+.career-carousel .swiper-wrapper {
+  padding: 1px;
+}
+@media (min-width: 768px) {
+  .swiper-container {
+    padding-left: 65px !important;
+  }
+}
+.swiper-container-horizontal .swiper-scrollbar {
+  height: 10px;
+  background: #222;
+  max-width: 550px;
+  width: 50%;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  bottom: 0;
+}
+.swiper-container-horizontal {
+  padding-bottom: 20px;
+}
+.swiper-scrollbar-drag {
+  background: #373737;
+}
+.pagination {
+  display: none;
+}
+@media (min-width: 768px) {
+  .pagination {
+    display: flex;
+  }
+}
+.pagination .kb-focus {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+.pagination--previous {
+  background: linear-gradient(90deg, #191919 50%, transparent);
+}
+.pagination--next {
+  background: linear-gradient(270deg, #191919 50%, transparent);
+}

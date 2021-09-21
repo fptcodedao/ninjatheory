@@ -1,0 +1,11 @@
+.benefit-icon {
+    background-image: url('../../../assets/img/icons/tick2.png');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 40px 40px;
+}
+@media (min-width: 1940px) {
+    .benefit-icon {
+        background-size: 60px 60px;
+    }
+}

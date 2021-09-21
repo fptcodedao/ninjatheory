@@ -75,9 +75,9 @@ const LifeAtNinja: React.FC = () => {
           <div>
             <div className="relative overflow-hidden pb-375/160 md:pb-940/530 bg-nt-grey">
               <img
-                data-src="https://ninjatheory.azureedge.net/site/site/assets/careers_lifeatninja_e3_940x530_71152052e3_074feba35c.jpg"
+                src="https://ninjatheory.azureedge.net/site/site/assets/careers_lifeatninja_e3_940x530_71152052e3_074feba35c.jpg"
                 alt=""
-                className="lazy-load-transition absolute h-full w-full object-cover"
+                className="lazy-load-transition lazy-load-transition-loaded absolute h-full w-full object-cover"
               />
             </div>
           </div>
@@ -97,9 +97,9 @@ const LifeAtNinja: React.FC = () => {
                   <div className="w-full h-full video-image">
                     <div className="relative overflow-hidden pb-16/9 bg-nt-grey">
                       <img
-                        data-src="https://img.youtube.com/vi/mAHtHXVRjxg/maxresdefault.jpg"
+                        src="https://img.youtube.com/vi/mAHtHXVRjxg/maxresdefault.jpg"
                         alt=""
-                        className="lazy-load-transition absolute h-full w-full object-cover"
+                        className="lazy-load-transition lazy-load-transition-loaded absolute h-full w-full object-cover"
                       />
                     </div>
                   </div>
