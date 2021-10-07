@@ -1,20 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { clearAccount } from '../../actions/accountAction';
 import ImportModal from '../../components/Account/ImportModal';
 import { modalService } from '../../components/Commons/Modals/ModalListener';
 import Slider from '../../components/Slider/Slider';
+import ENV from '../../configs/env';
 import './Home.scss';
+import HelloContract from '../../contracts/Hello.json';
 
 const Home: React.FC = () => {
   const { address } = useSelector((state: any) => state.account);
+  const { web3Service } = useSelector((state: any) => state.global);
   const dispatch = useDispatch();
-
+  const [quantityBnb, setQuantityBnb] = useState(0.001);
   function disconnectAccount() {
     dispatch(clearAccount());
     localStorage.clear();
   }
+
+  function presaleToken(address: any, token: any) {
+    if (web3Service) {
+      const contractService = new web3Service.eth.Contract(HelloContract.output.abi, ENV.CONTRACT.TOKEN);
+      return contractService.methods.tokenSale(ENV.CONTRACT.TOKEN).send({
+        from: address,
+        value: token
+      })
+    }
+  };
+
+  async function buyPreSaleToken() {
+    const response = await presaleToken(address, quantityBnb * Math.pow(10,18))
+    console.log(response);
+  }
+
+  function handleChangeQuantity(e: any) {
+    setQuantityBnb(e.target.value);
+  }
+
   function openImportModal() {
     modalService.show(ImportModal);
   }
@@ -174,7 +197,13 @@ const Home: React.FC = () => {
                 <div className="visible connect-wallet flex nav flex-col items-center w-2/3">
                 {
                   address ? (
-                    <div className="dropdown inline-block relative">
+                    <>
+                    <div className="flex mb-4">
+                      <input type="text" className="w-full border border-gray-400 p-2 focus:outline-none text-black" value={quantityBnb} onChange={handleChangeQuantity} />
+                      <button type="button" className="rounded-t bg-dark-500 text-white py-2 px-4 block whitespace-no-wrap" onClick={buyPreSaleToken}>Buy Token</button>
+                    </div>
+                    <button className="rounded-t bg-dark-500 text-white py-2 px-4 block whitespace-no-wrap" onClick={disconnectAccount}>Disconnect</button>
+                    {/* <div className="dropdown inline-block relative">
                       <button className="address">
                         <span className="mr-1">{address}</span>
                       </button>
@@ -183,7 +212,8 @@ const Home: React.FC = () => {
                           <button className="rounded-t bg-dark-500 text-white py-2 px-4 block whitespace-no-wrap" onClick={disconnectAccount}>Disconnect</button>
                         </li>
                       </ul>
-                    </div>
+                    </div> */}
+                    </>
                   ) : (
                     <button className="btn-connect-wallet" onClick={openImportModal}>
                       Connect Wallet

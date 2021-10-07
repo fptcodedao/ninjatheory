@@ -45,6 +45,10 @@ export default class BaseWalletService {
     return this.address.toLowerCase();
   };
 
+  getWeb3 = () => {
+    return this.web3;
+  }
+
   getDisconnected = (clearAccount?: any, importAccount?: any, wallet?: any) => {
     this._throwErrorOnNetworkError(clearAccount);
 

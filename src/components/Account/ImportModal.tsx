@@ -2,6 +2,7 @@ import React from 'react';
 import MetamaskAccount from './MetamaskAccount';
 import BasicModalContent from '../Commons/Modals/BasicModalContent';
 import WalletConnectAccount from './WalletConnectAccount';
+import ENV from '../../configs/env';
 
 export default function ImportModal() {
   return (
@@ -10,7 +11,11 @@ export default function ImportModal() {
       noPanel={true}
       content={(
         <div className="account">
-          <MetamaskAccount />
+          <MetamaskAccount
+            nodeUrl={ENV.NODE.URL}
+            networkId={ENV.NETWORK_ID}
+            chainName={ENV.CHAIN_NAME}
+          />
           <WalletConnectAccount />
         </div>
       )}

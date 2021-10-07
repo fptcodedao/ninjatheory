@@ -7,9 +7,9 @@ const initialState: any = {
   },
   web3Service: null,
   tokenPrice: {
-    FARA: 0,
     BNB: 0
-  }
+  },
+  contractService: null,
 };
 
 export default function globalReducer(state = initialState, action: any): any {
@@ -35,6 +35,12 @@ export default function globalReducer(state = initialState, action: any): any {
       return {
         ...state,
         tokenPrice: action.payload
+      }
+    }
+    case globalActionTypes.SET_CONTRACT_SERVICE: {
+      return {
+        ...state,
+        contractService: action.payload
       }
     }
     default:

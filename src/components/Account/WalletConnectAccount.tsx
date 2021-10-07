@@ -5,7 +5,7 @@ import { clearAccount, importAccount } from '../../actions/accountAction';
 import { WALLET_TYPE } from '../../configs/constants';
 import { modalService } from '../../components/Commons/Modals/ModalListener';
 import { fromNetworkIdToName, getWalletParams } from '../../utils/helpers';
-import { setGlobalModal } from '../../actions/globalAction';
+import { setWeb3Service, setGlobalModal } from '../../actions/globalAction';
 import ENV from '../../configs/env';
 
 export default function WalletConnectAccount(props: any) {
@@ -17,7 +17,7 @@ export default function WalletConnectAccount(props: any) {
       const wallet = new WalletConnectService(props);
       await wallet.initiateWallet();
       const address = await wallet.connect(openConnectErrorModal, openNetworkErrorModal);
-
+      let web3Service = wallet.getWeb3();
       if (address) {
         wallet.getDisconnected(
           () => dispatch(clearAccount()),
@@ -25,6 +25,7 @@ export default function WalletConnectAccount(props: any) {
           wallet
         );
         dispatch(importAccount(address, wallet, WALLET_TYPE.WALLET_CONNECT));
+        dispatch(setWeb3Service(web3Service));
         modalService.close();
       }
     } catch (e) {

@@ -6,7 +6,7 @@ import { clearAccount, importAccount } from '../../actions/accountAction';
 import { WALLET_TYPE } from '../../configs/constants';
 import { fromNetworkIdToName, getWalletParams } from '../../utils/helpers';
 import { modalService } from '../Commons/Modals/ModalListener';
-import { setGlobalModal } from '../../actions/globalAction';
+import { setGlobalModal, setWeb3Service } from '../../actions/globalAction';
 import './scss/ImportModal.scss';
 
 export default function MetamaskAccount(props: any) {
@@ -18,7 +18,7 @@ export default function MetamaskAccount(props: any) {
     const props = getWalletParams();
     const wallet = new MetamaskService(props);
     const address = await wallet.connect(openConnectErrorModal, openNetworkErrorModal);
-
+    let web3Service = wallet.getWeb3();
     if (address) {
       wallet.getDisconnected(
         () => dispatch(clearAccount()),
@@ -26,6 +26,7 @@ export default function MetamaskAccount(props: any) {
         wallet
       );
       dispatch(importAccount(address, wallet, WALLET_TYPE.METAMASK));
+      dispatch(setWeb3Service(web3Service));
       modalService.close();
     }
 

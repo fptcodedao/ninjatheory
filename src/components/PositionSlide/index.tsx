@@ -6,7 +6,10 @@ import SwiperCore, {
   Scrollbar
 } from 'swiper';
 
+import 'swiper/swiper.scss';
 import './PositionSlide.scss';
+import { ROUTE } from '../../configs/constants';
+import { Link } from 'react-router-dom';
 
 SwiperCore.use([Navigation, Scrollbar]);
 
@@ -56,7 +59,7 @@ const PositionSlide: React.FC = () => {
         effect="fade"
       >
         <SwiperSlide className="aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-out" data-aos-delay={0} style={{ marginRight: 49 }}>
-          <a href="/careers/opportunities/tech-art" className="no-focus block">
+          <Link to={ROUTE.HOME} className="no-focus block">
             <span tabIndex={-1} className="kb-focus flex">
               <div className="h-150 w-150 md:w-200 md:h-200 flex items-center p-1 career-category bg-nt-grey">
                 <div className="flex flex-col flex-1 h-full justify-between items-center pt-2 pb-1 md:pt-5 md:pb-3">
@@ -75,10 +78,10 @@ const PositionSlide: React.FC = () => {
                 </div>
               </div>
             </span>
-          </a>
+          </Link>
         </SwiperSlide>
         <SwiperSlide className="aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-out" data-aos-delay={100} style={{ marginRight: 49 }}>
-          <a href="/careers/opportunities/studio" className="no-focus block">
+          <Link to={ROUTE.HOME} className="no-focus block">
             <span tabIndex={-1} className="kb-focus flex">
               <div className="h-150 w-150 md:w-200 md:h-200 flex items-center p-1 career-category bg-nt-grey hover:bg-nt-grey-light-alt">
                 <div className="flex flex-col flex-1 h-full justify-between items-center pt-2 pb-1 md:pt-5 md:pb-3">
@@ -97,10 +100,10 @@ const PositionSlide: React.FC = () => {
                 </div>
               </div>
             </span>
-          </a>
+          </Link>
         </SwiperSlide>
         <SwiperSlide className="aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-out" data-aos-delay={200} style={{ marginRight: 49 }}>
-          <a href="/careers/opportunities/programming" className="no-focus block">
+          <Link to={ROUTE.HOME} className="no-focus block">
             <span tabIndex={-1} className="kb-focus flex">
               <div className="h-150 w-150 md:w-200 md:h-200 flex items-center p-1 career-category bg-nt-grey hover:bg-nt-grey-light-alt">
                 <div className="flex flex-col flex-1 h-full justify-between items-center pt-2 pb-1 md:pt-5 md:pb-3">
@@ -119,10 +122,10 @@ const PositionSlide: React.FC = () => {
                 </div>
               </div>
             </span>
-          </a>
+          </Link>
         </SwiperSlide>
         <SwiperSlide className="aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-out" data-aos-delay={300} style={{ marginRight: 49 }}>
-          <a href="/careers/opportunities/animation" className="no-focus block">
+          <Link to={ROUTE.HOME} className="no-focus block">
             <span tabIndex={-1} className="kb-focus flex">
               <div className="h-150 w-150 md:w-200 md:h-200 flex items-center p-1 career-category bg-nt-grey">
                 <div className="flex flex-col flex-1 h-full justify-between items-center pt-2 pb-1 md:pt-5 md:pb-3">
@@ -141,10 +144,10 @@ const PositionSlide: React.FC = () => {
                 </div>
               </div>
             </span>
-          </a>
+          </Link>
         </SwiperSlide>
         <SwiperSlide className="aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-out" data-aos-delay={400} style={{ marginRight: 49 }}>
-          <a href="/careers/opportunities/design" className="no-focus block">
+          <Link to={ROUTE.HOME} className="no-focus block">
             <span tabIndex={-1} className="kb-focus flex">
               <div className="h-150 w-150 md:w-200 md:h-200 flex items-center p-1 career-category bg-nt-grey">
                 <div className="flex flex-col flex-1 h-full justify-between items-center pt-2 pb-1 md:pt-5 md:pb-3">
@@ -163,10 +166,10 @@ const PositionSlide: React.FC = () => {
                 </div>
               </div>
             </span>
-          </a>
+          </Link>
         </SwiperSlide>
         <SwiperSlide className="aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-out" data-aos-delay={500} style={{ marginRight: 49 }}>
-          <a href="/careers/opportunities/art" className="no-focus block">
+          <Link to={ROUTE.HOME} className="no-focus block">
             <span tabIndex={-1} className="kb-focus flex">
               <div className="h-150 w-150 md:w-200 md:h-200 flex items-center p-1 career-category bg-nt-grey">
                 <div className="flex flex-col flex-1 h-full justify-between items-center pt-2 pb-1 md:pt-5 md:pb-3">
@@ -185,10 +188,10 @@ const PositionSlide: React.FC = () => {
                 </div>
               </div>
             </span>
-          </a>
+          </Link>
         </SwiperSlide>
         <SwiperSlide className="aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-out" data-aos-delay={600} style={{ marginRight: 49 }}>
-          <a href="/careers/opportunities/production" className="no-focus block">
+          <Link to={ROUTE.HOME} className="no-focus block">
             <span tabIndex={-1} className="kb-focus flex">
               <div className="h-150 w-150 md:w-200 md:h-200 flex items-center p-1 career-category bg-nt-grey">
                 <div className="flex flex-col flex-1 h-full justify-between items-center pt-2 pb-1 md:pt-5 md:pb-3">
@@ -207,10 +210,10 @@ const PositionSlide: React.FC = () => {
                 </div>
               </div>
             </span>
-          </a>
+          </Link>
         </SwiperSlide>
         <SwiperSlide className="aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-out" data-aos-delay={700} style={{ marginRight: 49 }}>
-          <a href="/careers/opportunities/it" className="no-focus block">
+          <Link to={ROUTE.HOME} className="no-focus block">
             <span tabIndex={-1} className="kb-focus flex">
               <div className="h-150 w-150 md:w-200 md:h-200 flex items-center p-1 career-category bg-nt-grey">
                 <div className="flex flex-col flex-1 h-full justify-between items-center pt-2 pb-1 md:pt-5 md:pb-3">
@@ -229,10 +232,10 @@ const PositionSlide: React.FC = () => {
                 </div>
               </div>
             </span>
-          </a>
+          </Link>
         </SwiperSlide>
         <SwiperSlide className="aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-out" data-aos-delay={800} style={{ marginRight: 49 }}>
-          <a href="/careers/opportunities/audio" className="no-focus block">
+          <Link to={ROUTE.HOME} className="no-focus block">
             <span tabIndex={-1} className="kb-focus flex">
               <div className="h-150 w-150 md:w-200 md:h-200 flex items-center p-1 career-category bg-nt-grey">
                 <div className="flex flex-col flex-1 h-full justify-between items-center pt-2 pb-1 md:pt-5 md:pb-3">
@@ -251,11 +254,10 @@ const PositionSlide: React.FC = () => {
                 </div>
               </div>
             </span>
-          </a>
+          </Link>
         </SwiperSlide>
         <SwiperSlide className="aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-out" data-aos-delay={900} style={{ marginRight: 49 }}>
-          <a
-            href="/careers/opportunities/commercial-and-marketing"
+          <Link to={ROUTE.HOME}
             className="no-focus block"
           >
             <span tabIndex={-1} className="kb-focus flex">
@@ -276,10 +278,10 @@ const PositionSlide: React.FC = () => {
                 </div>
               </div>
             </span>
-          </a>
+          </Link>
         </SwiperSlide>
         <SwiperSlide className="aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-out" data-aos-delay={1000} style={{ marginRight: 49 }}>
-          <a href="/careers/opportunities/internships" className="no-focus block">
+          <Link to={ROUTE.HOME} className="no-focus block">
             <span tabIndex={-1} className="kb-focus flex">
               <div className="h-150 w-150 md:w-200 md:h-200 flex items-center p-1 career-category bg-nt-grey">
                 <div className="flex flex-col flex-1 h-full justify-between items-center pt-2 pb-1 md:pt-5 md:pb-3">
@@ -298,7 +300,7 @@ const PositionSlide: React.FC = () => {
                 </div>
               </div>
             </span>
-          </a>
+          </Link>
         </SwiperSlide>
       </Swiper>
       <div className="w-65 h-full absolute right-0 top-0 z-10 flex justify-end items-center pagination pagination--next pr-3 wrapper:pr-0">
