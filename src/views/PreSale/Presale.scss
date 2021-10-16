@@ -1,0 +1,43 @@
+.main {
+    background: url(../../assets/images/f86a2ce8-5478-494e-a92c-241a22284486.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mb-5.aos-init.aos-animate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.box-presale {
+    width: 50%;
+    vertical-align: top;
+    background: #fafafa;
+    color: #333;
+    padding: 16px;
+    border-radius: 5px;
+    min-height: 370px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+}
+.pb-2 {
+    padding-bottom: 10px;
+}
+.p-0 {
+    padding: 0px;
+}
+.bg-transparent {
+    background: transparent;
+}
+@media screen and (max-width: 1072px) {
+    .box-presale {
+        background: transparent;
+        color: #fff;
+        width: 100%;
+        &.bg-transparent {
+            display: none;
+        }
+    }
+}

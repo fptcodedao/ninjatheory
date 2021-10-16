@@ -5,6 +5,12 @@ import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
 import './Slider.scss';
 
+import slider1 from '../../assets/images/00e49ae5-e14c-4bd1-921c-cfec0a41f85e.webp';
+import slider2 from '../../assets/images/4a4c2305-ba19-4c57-b82d-6ec8728a3d57.webp';
+import slider3 from '../../assets/images/5cc83c99-28ad-484d-9dae-34ceaacdbfb0.webp';
+import slider4 from '../../assets/images/06aff071-80fc-44b5-8234-41aaeea6219a.webp';
+import slider5 from '../../assets/images/6d4235e0-a822-4bb9-94df-3c733e43145f.webp';
+
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const Slider: React.FC = () => {
@@ -17,11 +23,11 @@ const Slider: React.FC = () => {
       className="slides"
       infinite={false}
     >
-      <div data-src="https://ninjatheory.azureedge.net/site/site/assets/large_home_senua_saga_1_f7461080d7.jpg" />
-      <div data-src="https://ninjatheory.azureedge.net/site/site/assets/large_home_senua_saga_2_8b028ea00e.jpg" />
-      <div data-src="https://ninjatheory.azureedge.net/site/site/assets/large_home_senua_saga_3_455055d0e8.jpg" />
-      <div data-src="https://ninjatheory.azureedge.net/site/site/assets/large_home_mara_1_1153e5eb27.jpg" />
-      <div data-src="https://ninjatheory.azureedge.net/site/site/assets/large_home_insight_1_014c579c4d.jpg" />
+      <div data-src={slider1} />
+      <div data-src={slider2} />
+      <div data-src={slider3} />
+      <div data-src={slider4} />
+      <div data-src={slider5} />
     </AutoplaySlider>
   );
 }

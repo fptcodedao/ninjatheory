@@ -13,16 +13,16 @@ import Web3 from 'web3';
 import { Web3ReactProvider } from '@web3-react/core';
 import { provider } from 'web3-core';
 import { ModalListener } from './components/Commons/Modals/ModalListener';
-import Careers from './views/Careers/Careers';
 
 const Home = lazy(() => import('./views/Home/index'))
 const About = lazy(() => import('./views/About/index'))
-const Opportunities = lazy(() => import('./views/Careers/Opportunities'))
-const LifeAtNinja = lazy(() => import('./views/Careers/LifeAtNinja'))
-const LifeInCambridge = lazy(() => import('./views/Careers/LifeInCambridge'))
+// const Opportunities = lazy(() => import('./views/Careers/Opportunities'))
+// const LifeAtNinja = lazy(() => import('./views/Careers/LifeAtNinja'))
+// const LifeInCambridge = lazy(() => import('./views/Careers/LifeInCambridge'))
 const Games = lazy(() => import('./views/Games/index'))
 const CandidatePrivacyPolicy = lazy(() => import('./views/CandidatePrivacyPolicy/index'))
 const DmcaPolicy = lazy(() => import('./views/DmcaPolicy/index'))
+const PreSale = lazy(() => import('./views/PreSale/index'))
 
 function App() {
   useEffect(() => {
@@ -58,7 +58,7 @@ function App() {
               <Route path={ROUTE.ABOUT}>
                 <About />
               </Route>
-              <Route path="/careers">
+              {/* <Route path="/careers">
                 <Careers>
                   <Route path="/careers/opportunities">
                     <Opportunities />
@@ -70,6 +70,9 @@ function App() {
                     <LifeInCambridge />
                   </Route>
                 </Careers>
+              </Route> */}
+              <Route path={ROUTE.PRESALE}>
+                <PreSale />
               </Route>
               <Route path={ROUTE.GAMES}>
                 <Games />

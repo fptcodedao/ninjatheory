@@ -5,6 +5,7 @@ export const ROUTE = {
   GAMES: '/games',
   CandidatePrivacyPolicy: '/candidate-privacy-policy',
   DmcaPolicy: '/dmca-policy',
+  PRESALE: '/presale',
 };
 export const WALLET_TYPE = {
   METAMASK: "metamask",

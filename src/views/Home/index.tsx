@@ -1,19 +1,60 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { clearAccount } from '../../actions/accountAction';
 import ImportModal from '../../components/Account/ImportModal';
 import { modalService } from '../../components/Commons/Modals/ModalListener';
 import Slider from '../../components/Slider/Slider';
+import { ROUTE } from '../../configs/constants';
 import ENV from '../../configs/env';
 import './Home.scss';
-import HelloContract from '../../contracts/Hello.json';
+
+interface countDownTimer {
+  days: any;
+  hours: any;
+  minutes: any;
+  seconds: any;
+}
+
+const HelloContract = require('../../contracts/Hello.json');
 
 const Home: React.FC = () => {
   const { address } = useSelector((state: any) => state.account);
   const { web3Service } = useSelector((state: any) => state.global);
   const dispatch = useDispatch();
   const [quantityBnb, setQuantityBnb] = useState(0.001);
+
+  const calculateTimeLeft = (): countDownTimer => {
+    const difference = +new Date(`2021-10-31`) - +new Date();
+    let timeLeft = {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+    };
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    }
+
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+  });
+
+
+  const Abi = HelloContract.output.abi;
+
   function disconnectAccount() {
     dispatch(clearAccount());
     localStorage.clear();
@@ -21,7 +62,7 @@ const Home: React.FC = () => {
 
   function presaleToken(address: any, token: any) {
     if (web3Service) {
-      const contractService = new web3Service.eth.Contract(HelloContract.output.abi, ENV.CONTRACT.TOKEN);
+      const contractService = new web3Service.eth.Contract(Abi, ENV.CONTRACT.TOKEN);
       return contractService.methods.tokenSale(ENV.CONTRACT.TOKEN).send({
         from: address,
         value: token
@@ -167,12 +208,12 @@ const Home: React.FC = () => {
                         className="transition-all transform ease-in-out duration-500 my-6 opacity-0 -translate-y-full blur delay-nav-out-2 delay-nav-out-2 lg:delay-nav-out-0 no-blur-lg lg:translate-y-0 lg:opacity-100">
                         <span>
                           <Link
-                            to="/careers/opportunities/"
+                            to={ROUTE.PRESALE}
                             className="text-white font-roboto font-thin  text-28  no-focus transition-opacity duration-150 hover:opacity-50 block  lg:font-black lg:text-14 leading-none lg:uppercase"
                           >
                             <span tabIndex={-1} className="kb-focus flex">
 
-                              Careers
+                              Presale
                             </span>
                           </Link>
                         </span>
@@ -203,20 +244,10 @@ const Home: React.FC = () => {
                       <button type="button" className="rounded-t bg-dark-500 text-white py-2 px-4 block whitespace-no-wrap" onClick={buyPreSaleToken}>Buy Token</button>
                     </div>
                     <button className="rounded-t bg-dark-500 text-white py-2 px-4 block whitespace-no-wrap" onClick={disconnectAccount}>Disconnect</button>
-                    {/* <div className="dropdown inline-block relative">
-                      <button className="address">
-                        <span className="mr-1">{address}</span>
-                      </button>
-                      <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
-                        <li>
-                          <button className="rounded-t bg-dark-500 text-white py-2 px-4 block whitespace-no-wrap" onClick={disconnectAccount}>Disconnect</button>
-                        </li>
-                      </ul>
-                    </div> */}
                     </>
                   ) : (
                     <button className="btn-connect-wallet" onClick={openImportModal}>
-                      Connect Wallet
+                      Buy Token
                     </button>
                   )
                 }
@@ -230,56 +261,20 @@ const Home: React.FC = () => {
                   <div className="carousel-wrapper relative">
                     <div className="mini-slide">
                       <div
-                        className="flex items-center"
+                        className="text-center"
                         style={{ opacity: 1, transform: "translate(0px, 0px)" }}
                       >
-                        <div className="uppercase text-white font-roboto font-black lg:text-right flex-1 leading-none 0">
-                          <span
-                            className="block"
-                            style={{
-                              opacity: 1,
-                              transform: "translate(0px, 0px)",
-                              visibility: "inherit"
-                            }}
-                          >
-                            <span className="block text-24 md:text-24 lg1:text-36 whitespace-no-wrap text-shadow">
-                              We are
-                            </span>
-                            <span className="block text-24 md:text-24 lg1:text-36 text-shadow">
-                              Hiring
-                            </span>
-                          </span>
-                          <span
-                            className="block text-12 mt-1 md:text-12 lg1:text-16 tracking-wider text-shadow"
-                            style={{
-                              opacity: 1,
-                              transform: "translate(0px, 0px)",
-                              visibility: "inherit"
-                            }}
-                          >
-                            open positions
-                          </span>
+                        <div id="countdown">
+                          <ul>
+                            <li><span id="days">{timeLeft.days}</span>days</li>
+                            <li><span id="hours">{timeLeft.hours}</span>Hours</li>
+                            <li><span id="minutes">{timeLeft.minutes}</span>Minutes</li>
+                            <li><span id="seconds">{timeLeft.seconds}</span>Seconds</li>
+                          </ul>
                         </div>
-                        <div
-                          className="font-roboto font-black text-ninja-theory leading-none text-120 md:text-110 lg1:text-156 px-2"
-                          style={{
-                            opacity: 1,
-                            transform: "translate(0px, 0px)",
-                            visibility: "inherit"
-                          }}
-                        >
-                          3
-                        </div>
-                        <div
-                          className="invisible"
-                          style={{ opacity: 1, visibility: "inherit" }}
-                        >
-                          <Link
-                            to="/careers/opportunities"
-                          >
-                            Apply
-                          </Link>
-                        </div>
+                        <button className="btn-claim-token">
+                          Claim Airdrop
+                        </button>
                       </div>
                     </div>
                     <div className="mini-slide hidden">

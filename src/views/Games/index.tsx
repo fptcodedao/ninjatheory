@@ -1,5 +1,22 @@
 import React from "react";
 
+import slider1 from '../../assets/images/00e49ae5-e14c-4bd1-921c-cfec0a41f85e.webp';
+import slider2 from '../../assets/images/4a4c2305-ba19-4c57-b82d-6ec8728a3d57.webp';
+import slider3 from '../../assets/images/5cc83c99-28ad-484d-9dae-34ceaacdbfb0.webp';
+import slider4 from '../../assets/images/06aff071-80fc-44b5-8234-41aaeea6219a.webp';
+import slider5 from '../../assets/images/6d4235e0-a822-4bb9-94df-3c733e43145f.webp';
+import slider6 from '../../assets/images/a2b4d37d-caeb-4974-84a6-b9589d6f2acc.webp';
+import slider7 from '../../assets/images/f86a2ce8-5478-494e-a92c-241a22284486.webp';
+import slider8 from '../../assets/images/58b3174d-f15e-4c6e-9848-5897e7502238.webp';
+import slider9 from '../../assets/images/a8a1ff31-1875-4dad-86da-4f504ec85e35.webp';
+import slider10 from '../../assets/images/c09d103c-be44-4e49-a732-6bd6f233f53c.webp';
+import slider11 from '../../assets/images/d3d6500a-20a2-4530-8a85-6438bef1dd9e.webp';
+import slider12 from '../../assets/images/56bc2af8-3cb7-44ce-b5aa-26d861fa330b.webp';
+import slider13 from '../../assets/images/71c4fe61-48fe-4089-b471-786048d04e80.webp';
+import slider14 from '../../assets/images/686b6246-8118-4c03-8fd6-3bd5a6a9321e.webp';
+import slider15 from '../../assets/images/d0e0525b-ec89-4461-8e46-5abd0d7c96d2.webp';
+import slider16 from '../../assets/images/25db8b7e-430e-4143-807d-5d063b74299c.webp';
+
 const Games: React.FC = () => {
   return (
     <section>
@@ -40,7 +57,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/games_hellblade2_745x420_308df14fc5.jpg"
+                        src={slider1}
                       />
                     </div>
                   </div>
@@ -98,7 +115,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/games_projectmara_745x420_306b849cd5.jpg"
+                        src={slider2}
                       />
                     </div>
                   </div>
@@ -156,7 +173,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/large_maxresdefault_0cfd2e4e91.jpg"
+                        src={slider3}
                       />
                     </div>
                   </div>
@@ -214,7 +231,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/Hellblade_Optimised_for_Xbox_Series_7519517d38.jpg"
+                        src={slider4}
                       />
                     </div>
                   </div>
@@ -272,7 +289,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/games_bleedingedge_745x420_8df4388946.jpg"
+                        src={slider5}
                       />
                     </div>
                   </div>
@@ -330,7 +347,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/games_vaderimmortalep1_745x420_e9af382daf.jpg"
+                        src={slider6}
                       />
                     </div>
                   </div>
@@ -388,7 +405,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/games_nicodemus_745x420_c114381b3d.jpg"
+                        src={slider7}
                       />
                     </div>
                   </div>
@@ -446,7 +463,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/games_hellblade1_745x420_dc381bb71e.jpg"
+                        src={slider8}
                       />
                     </div>
                   </div>
@@ -504,7 +521,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/games_dexed_745x420_7ec07546c4.jpg"
+                        src={slider9}
                       />
                     </div>
                   </div>
@@ -562,7 +579,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/games_disneyinfinity3_745x420_29a33ffff6.jpg"
+                        src={slider10}
                       />
                     </div>
                   </div>
@@ -620,7 +637,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/games_dmcdefinitive_745x420_2e020ec899.jpg"
+                        src={slider11}
                       />
                     </div>
                   </div>
@@ -678,7 +695,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/games_disneymarvel_745x420_948d4ede3c.jpg"
+                        src={slider12}
                       />
                     </div>
                   </div>
@@ -736,7 +753,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/games_fightback_745x420_5cc0a5cef8.jpg"
+                        src={slider13}
                       />
                     </div>
                   </div>
@@ -794,7 +811,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/dmc_standard_225f564f5e.jpg"
+                        src={slider14}
                       />
                     </div>
                   </div>
@@ -852,7 +869,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/games_enslaved_745x420_afaf28cdbc.jpg"
+                        src={slider15}
                       />
                     </div>
                   </div>
@@ -910,7 +927,7 @@ const Games: React.FC = () => {
                       <img
                         alt=""
                         className="lazy-load-transition absolute h-full w-full object-cover lazy-load lazy-load-transition-loaded"
-                        src="https://ninjatheory.azureedge.net/site/site/assets/games_heavenlysword_745x420_2769d22c47.jpg"
+                        src={slider16}
                       />
                     </div>
                   </div>
