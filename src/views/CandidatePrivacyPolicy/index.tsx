@@ -19,7 +19,7 @@ const CandidatePrivacyPolicy: React.FC = () => {
             data-aos-easing="ease-out"
             className="-mt-1 font-roboto text-14 md:text-20 font-black"
           >
-            for roles at Ninja Theory Limited
+            for roles at Zombie Life Limited
           </h3>
         </div>
         <div className="md:max-w-72">
@@ -68,7 +68,7 @@ const CandidatePrivacyPolicy: React.FC = () => {
             <div className="font-roboto text-14 md:text-14 text-white copy">
               <p>
                 You are being sent a copy of this privacy notice because you are
-                applying for work with Ninja Theory Limited and we are responsible for
+                applying for work with Zombie Life Limited and we are responsible for
                 how we hold and use your personal information. This privacy notice
                 makes you aware of how and why your personal data will be used by us,
                 namely for the purposes of the recruitment exercise, and how long it
@@ -390,7 +390,7 @@ const CandidatePrivacyPolicy: React.FC = () => {
                 personal information, object to the processing of your personal data,
                 or request that we transfer a copy of your personal information to
                 another party, please contact us in writing at
-                <a href="mailto:privacy@ninjatheory.com">privacy@ninjatheory.com</a>.
+                <a href="mailto:privacy@zombielife.games">privacy@zombielife.games</a>.
               </p>
             </div>
           </div>
@@ -413,7 +413,7 @@ const CandidatePrivacyPolicy: React.FC = () => {
               </p>
               <p>
                 To withdraw your consent, please contact
-                <a href="mailto:privacy@ninjatheory.com">privacy@ninjatheory.com</a>.
+                <a href="mailto:privacy@zombielife.games">privacy@zombielife.games</a>.
                 Once we have received notification that you have withdrawn your
                 consent, we will no longer process your application and, subject to
                 our retention policy, we will dispose of your personal data securely.
@@ -432,12 +432,12 @@ const CandidatePrivacyPolicy: React.FC = () => {
             </h3>
             <div className="font-roboto text-14 md:text-14 text-white copy">
               <p>
-                If you submitted a speculative application to Ninja Theory, which was
+                If you submitted a speculative application to Zombie Life, which was
                 not tied to a specific vacancy, we will keep your details on file for
                 a period of 6 months. After which we will delete your personal data
-                and records. Should you want Ninja Theory to keep your details on file
+                and records. Should you want Zombie Life to keep your details on file
                 for longer than 6 months, please write to us at
-                <a href="mailto:privacy@ninjatheory.com">privacy@ninjatheory.com</a>
+                <a href="mailto:privacy@zombielife.games">privacy@zombielife.games</a>
               </p>
             </div>
           </div>
@@ -503,7 +503,7 @@ const CandidatePrivacyPolicy: React.FC = () => {
               <p>
                 If you have any questions about this privacy notice or how we handle
                 your personal information, please contact us a
-                <a href="mailto:privacy@ninjatheory.com">privacy@ninjatheory.com</a>.
+                <a href="mailto:privacy@zombielife.games">privacy@zombielife.games</a>.
               </p>
               <p>
                 You have the right to make a complaint at any time to the Information

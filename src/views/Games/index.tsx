@@ -22,7 +22,7 @@ const Games: React.FC = () => {
     <section>
       <div className="px-20-px wrapper:px-0 max-w-wrapper m-auto mb-8 md:mb-20">
         <div className="relative page-title-wrapper overflow-hidden">
-          <h1 className="text-ninja-theory gradient-text -invisible uppercase font-roboto font-black leading-none relative  text-55 md:text-127 wrapper:text-200 ">
+          <h1 className="text-zombielife gradient-text -invisible uppercase font-roboto font-black leading-none relative  text-55 md:text-127 wrapper:text-200 ">
             Games
           </h1>
         </div>

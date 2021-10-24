@@ -26,6 +26,7 @@
 
 @media (min-width: 1024px) {
   .outer-wrapper {
+    margin-top: 15%;
     transform: translate3d(0, -50%, 0);
   }
 }
@@ -139,5 +140,23 @@
     li span {
       font-size: calc(3.375rem * var(--smaller));
     }
+  }
+}
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+.home-navigation-wrapper {
+  .logo {
+    width: 450px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .home-navigation-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
