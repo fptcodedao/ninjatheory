@@ -1,14 +1,14 @@
 const env = {
-  NETWORK_ID: 97,
+  NETWORK_ID: 56,
   CHAIN_NAME: "bsc",
   URL: {
-    EXPLORER: 'https://testnet.bscscan.com',
+    EXPLORER: 'https://bscscan.com',
   },
   NODE: {
-    URL: "https://data-seed-prebsc-2-s1.binance.org:8545/"
+    URL: "https://bsc-dataseed.binance.org/"
   },
   CONTRACT: {
-    TOKEN: '0xa45155550511794498a7b036f4c4942089e48519',
+    TOKEN: '0x79a054665e76d90594ab5e4d751a2730d66b7c55',
   }
 };
 

@@ -16,7 +16,7 @@ interface countDownTimer {
   seconds: any;
 }
 
-const HelloContract = require('../../contracts/Hello.json');
+const HelloContractAbi = require('../../contracts/ZBL.json');
 
 const Home: React.FC = () => {
   const { address } = useSelector((state: any) => state.account);
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
   });
 
 
-  const Abi = HelloContract.output.abi;
+  const Abi = HelloContractAbi;
 
   function disconnectAccount() {
     dispatch(clearAccount());
@@ -71,8 +71,7 @@ const Home: React.FC = () => {
   };
 
   async function buyPreSaleToken() {
-    const response = await presaleToken(address, quantityBnb * Math.pow(10, 18))
-    console.log(response);
+    await presaleToken(address, quantityBnb * Math.pow(10, 18))
   }
 
   function handleChangeQuantity(e: any) {
