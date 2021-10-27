@@ -63,7 +63,8 @@ const Home: React.FC = () => {
   function presaleToken(address: any, token: any) {
     if (web3Service) {
       const contractService = new web3Service.eth.Contract(Abi, ENV.CONTRACT.TOKEN);
-      return contractService.methods.tokenSale(ENV.CONTRACT.TOKEN).send({
+      return contractService.methods.tokenSale().send({
+        from: address,
         value: token
       })
     }
@@ -76,7 +77,7 @@ const Home: React.FC = () => {
   async function handleClaimAirdrop() {
     if (web3Service) {
       const contractService = new web3Service.eth.Contract(Abi, ENV.CONTRACT.TOKEN);
-      return contractService.methods.claimAirdrop(ENV.CONTRACT.TOKEN).send({
+      return contractService.methods.claimAirdrop().send({
         from: address,
       })
     }
