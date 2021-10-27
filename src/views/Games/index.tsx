@@ -80,9 +80,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-1"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    TBA
+                    01/2022
                   </span>
                 </h3>
               </div>
@@ -138,9 +138,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-2"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    TBA
+                    12/2021
                   </span>
                 </h3>
               </div>
@@ -196,9 +196,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-19"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    TBA
+                    11/2021
                   </span>
                 </h3>
               </div>
@@ -254,9 +254,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-21"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    2021
+                    10/2021
                   </span>
                 </h3>
               </div>
@@ -312,9 +312,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-3"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    2020
+                    09/2021
                   </span>
                 </h3>
               </div>
@@ -370,9 +370,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-4"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    2019
+                    08/2021
                   </span>
                 </h3>
               </div>
@@ -428,9 +428,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-5"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    2018
+                    07/2021
                   </span>
                 </h3>
               </div>
@@ -486,9 +486,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-6"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    2017
+                    07/2021
                   </span>
                 </h3>
               </div>
@@ -544,9 +544,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-7"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    2017
+                    06/2021
                   </span>
                 </h3>
               </div>
@@ -602,9 +602,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-8"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    2015
+                    06/2021
                   </span>
                 </h3>
               </div>
@@ -660,9 +660,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-9"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    2015
+                    05/2021
                   </span>
                 </h3>
               </div>
@@ -718,9 +718,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-10"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    2014
+                    05/2021
                   </span>
                 </h3>
               </div>
@@ -776,9 +776,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-11"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    2013
+                    05/2021
                   </span>
                 </h3>
               </div>
@@ -834,9 +834,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-20"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    2013
+                    05/2021
                   </span>
                 </h3>
               </div>
@@ -892,9 +892,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-12"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    2010
+                    04/2021
                   </span>
                 </h3>
               </div>
@@ -950,9 +950,9 @@ const Games: React.FC = () => {
                     data-aos-easing="ease-out"
                     data-aos-anchor="#game-item-13"
                     data-aos-delay={100}
-                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-150 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
+                    className="--invisible inline-block font-roboto font-black text-white uppercase text-10 md:text-90 xl:text-145 md:block md:text-nt-grey-light-alt mr-5 md:leading-tight md:tracking-tighter aos-init aos-animate"
                   >
-                    2007
+                    04/2021
                   </span>
                 </h3>
               </div>

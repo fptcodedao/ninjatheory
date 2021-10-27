@@ -44,10 +44,16 @@ const PreSale: React.FC = () => {
                 <h3 className="font-roboto font-bold text-14 md:text-18 mb-3">
                     Presale details:
                 </h3>
-                <p className="text-14 pb-2">Price: <strong>1 BNB = 25.000 ZBL</strong></p>
-                {/* <p className="text-14 pb-2">Max cap per wallet — 3,750,000 ZBL tokens <strong>(~5 BNB) No minimum.</strong></p> */}
-                <p className="text-14 pb-2"><strong>Tokens are locked until presale end.</strong></p>
+                <p className="text-14 pb-2"><strong>Price:</strong> 1 BNB = 25,000 ZBL</p>
+                <p className="text-14 pb-2"><strong>Pancake listing price:</strong> 1 BNB = 22,500 ZBL</p>
+
+                <p className="text-14 pb-2">Max cap per wallet — 45,000 ZBL tokens (2 BNB) Min buy: 225 ZBL tokens (0.01 BNB)</p>
+                <p className="text-14 pb-2"><strong>Presale start date:</strong> 7th November 2021 at 7PM UTC.</p>
+
+                <p className="text-14 pb-2">Tokens are locked until presale end.</p>
+
                 <p className="text-14 pb-2">Liquidity locked on ZBL contract for 90 days. For evidence read function "LPLocked" then input ZBL's contract address and click query for LP unlock Unix time.</p>
+
                 <p className="text-14 pb-2">Softcap and Hardcap amounts will show minimum and maximum liquidity on added ZBL-BNB pool.</p>
             </div>
           </div>

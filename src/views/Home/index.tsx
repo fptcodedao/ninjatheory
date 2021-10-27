@@ -24,7 +24,7 @@ const Home: React.FC = () => {
   const dispatch = useDispatch();
   const [quantityBnb, setQuantityBnb] = useState(0.001);
 
-  const calculateTimeLeft = (): countDownTimer => {
+  const calculateTimeLeft = (timestamp = 0): countDownTimer => {
     const difference = +new Date(1636304400 * 1000) - +new Date();
     let timeLeft = {
       days: 0,
@@ -44,11 +44,13 @@ const Home: React.FC = () => {
     return timeLeft;
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(1636304400));
+  const [timeLeftSaleToken, setTimeLeftSaleToken] = useState(calculateTimeLeft(1636311600));
 
   useEffect(() => {
     setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
+      setTimeLeft(calculateTimeLeft(1636304400));
+      setTimeLeftSaleToken(calculateTimeLeft(1636311600));
     }, 1000);
   });
 
@@ -166,7 +168,8 @@ const Home: React.FC = () => {
                     </ul>
                   </nav>
                 </div>
-                <div className="visible connect-wallet flex nav flex-col items-center w-2/3">
+                {
+                  !(timeLeftSaleToken.seconds) ?? (<div className="visible connect-wallet flex nav flex-col items-center w-2/3">
                   {
                     address ? (
                       <>
@@ -182,7 +185,8 @@ const Home: React.FC = () => {
                       </button>
                     )
                   }
-                </div>
+                </div>)
+                }
               </div>
               <div className="mini-carousel-wrapper">
                 <div

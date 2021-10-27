@@ -98,13 +98,13 @@ const Header: React.FC = () => {
               >
                 <span>
                   <NavLink
-                    to="/careers/opportunities/"
+                    to="/presale"
                     className="text-white font-roboto font-thin  text-28  no-focus transition-opacity duration-150 hover:opacity-50 block lg:text-48 no-focus leading-none"
                     activeClassName="text-zombielife"
                   >
                     <span tabIndex={-1} className="kb-focus flex">
 
-                      Careers
+                      Presale
                     </span>
                   </NavLink>
                 </span>
