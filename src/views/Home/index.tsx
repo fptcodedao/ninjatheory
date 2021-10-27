@@ -165,6 +165,19 @@ const Home: React.FC = () => {
                           </Link>
                         </span>
                       </li>
+                      <li
+                        className="transition-all transform ease-in-out duration-500 my-6 opacity-0 -translate-y-full blur delay-nav-out-3 delay-nav-out-3 lg:delay-nav-out-0 no-blur-lg lg:translate-y-0 lg:opacity-100">
+                        <span>
+                          <a
+                            href="https://docs.zombielife.games"
+                            className="text-white font-roboto font-thin  text-28  no-focus transition-opacity duration-150 hover:opacity-50 block  lg:font-black lg:text-14 leading-none lg:uppercase"
+                          >
+                            <span tabIndex={-1} className="kb-focus flex">
+                              Docs
+                            </span>
+                          </a>
+                        </span>
+                      </li>
                     </ul>
                   </nav>
                 </div>

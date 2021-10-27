@@ -126,6 +126,22 @@ const Header: React.FC = () => {
                   </NavLink>
                 </span>
               </li>
+              <li
+                className="transition-all transform ease-in-out duration-500 my-6 translate-y-0 opacity-100 no-blur delay-nav-in-3 delay-nav-out-3 lg:delay-nav-out-0 no-blur-lg lg:translate-y-0 lg:opacity-100"
+                style={{}}
+              >
+                <span>
+                  <a
+                    href="https://docs.zombielife.games"
+                    className="text-white font-roboto font-thin  text-28  no-focus transition-opacity duration-150 hover:opacity-50 lg:text-48 block no-focus leading-none"
+                  >
+                    <span tabIndex={-1} className="kb-focus flex">
+
+                      Documents
+                    </span>
+                  </a>
+                </span>
+              </li>
             </ul>
           </nav>
           <ul className="flex flex-wrap md:hidden landscapemobile:order-3 justify-center">
