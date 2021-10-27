@@ -64,7 +64,6 @@ const Home: React.FC = () => {
     if (web3Service) {
       const contractService = new web3Service.eth.Contract(Abi, ENV.CONTRACT.TOKEN);
       return contractService.methods.tokenSale(ENV.CONTRACT.TOKEN).send({
-        from: address,
         value: token
       })
     }
@@ -72,7 +71,16 @@ const Home: React.FC = () => {
 
   async function buyPreSaleToken() {
     await presaleToken(address, quantityBnb * Math.pow(10, 18))
-  }
+  };
+
+  async function handleClaimAirdrop() {
+    if (web3Service) {
+      const contractService = new web3Service.eth.Contract(Abi, ENV.CONTRACT.TOKEN);
+      return contractService.methods.claimAirdrop(ENV.CONTRACT.TOKEN).send({
+        from: address,
+      })
+    }
+  };
 
   function handleChangeQuantity(e: any) {
     setQuantityBnb(e.target.value);
@@ -194,9 +202,17 @@ const Home: React.FC = () => {
                             <li><span id="seconds">{timeLeft.seconds}</span>Seconds</li>
                           </ul>
                         </div>
-                        <button className="btn-claim-token">
-                          Claim Airdrop
-                        </button>
+                        {
+                          address ? (
+                            <button className="btn-claim-token" onClick={handleClaimAirdrop}>
+                              Claim Airdrop
+                            </button>
+                          ) : (
+                            <button className="btn-claim-token" onClick={openImportModal}>
+                              Claim Airdrop
+                            </button>
+                          )
+                        }
                       </div>
                     </div>
                     <div className="mini-slide hidden">
