@@ -10,10 +10,10 @@ import ENV from '../../configs/env';
 import './Home.scss';
 
 interface countDownTimer {
-  days: any;
-  hours: any;
-  minutes: any;
-  seconds: any;
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
 }
 
 const HelloContractAbi = require('../../contracts/ZBL.json');

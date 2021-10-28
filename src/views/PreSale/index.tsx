@@ -47,7 +47,7 @@ const PreSale: React.FC = () => {
                 <p className="text-14 pb-2"><strong>Price:</strong> 1 BNB = 25,000 ZBL</p>
                 <p className="text-14 pb-2"><strong>Pancake listing price:</strong> 1 BNB = 22,500 ZBL</p>
 
-                <p className="text-14 pb-2">Max cap per wallet — 45,000 ZBL tokens (2 BNB) Min buy: 225 ZBL tokens (0.01 BNB)</p>
+                <p className="text-14 pb-2">Max cap per wallet — 50,000 ZBL tokens (2 BNB) Min buy: 250 ZBL tokens (0.01 BNB)</p>
                 <p className="text-14 pb-2"><strong>Presale start date:</strong> 7th November 2021 at 7PM UTC.</p>
 
                 <p className="text-14 pb-2">Tokens are locked until presale end.</p>
