@@ -72,7 +72,12 @@ const Home: React.FC = () => {
 
   async function handleClaimAirdrop() {
     if (address) {
-      wallet.claimAirdrop();
+      try {
+        await wallet.claimAirdrop();
+        await wallet.requestImportToken();
+      } catch (e) {
+        console.log(e);
+      }
     }
   };
 

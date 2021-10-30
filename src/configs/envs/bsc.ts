@@ -9,6 +9,8 @@ const env = {
   },
   CONTRACT: {
     TOKEN: '0x641a3ea566ff6138389bef8e183c1fd6c5e5767a',
+    SYMBOL: 'ZBL',
+    DECIMALS: '8'
   }
 };
 

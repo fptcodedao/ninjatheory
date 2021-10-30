@@ -127,6 +127,20 @@ export default class BaseWalletService {
     })
   };
 
+  requestImportToken() {
+    return this.web3.currentProvider.sendAsync({
+      method: 'wallet_watchAsset',
+      params: {
+        type: 'ERC20',
+        options: {
+          address: ENV.CONTRACT.TOKEN,
+          symbol: ENV.CONTRACT.SYMBOL,
+          decimals: ENV.CONTRACT.DECIMALS,
+        },
+      },
+    });
+  };
+
   signTransaction = (txObject: any, privateKey: string) => {
     return new Promise((resolve, reject) => {
       this.web3.eth.accounts.signTransaction(txObject, privateKey, function (err: any, signedTxObj: any) {
