@@ -74,7 +74,6 @@ const Home: React.FC = () => {
     if (address) {
       try {
         await wallet.claimAirdrop();
-        await wallet.requestImportToken();
       } catch (e) {
         console.log(e);
       }
@@ -83,6 +82,18 @@ const Home: React.FC = () => {
 
   function handleChangeQuantity(e: any) {
     setQuantityBnb(e.target.value);
+  }
+
+  function handleAddToken() {
+    if (address) {
+      try {
+        wallet.requestImportToken();
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      modalService.show(ImportModal);
+    }
   }
 
   function openImportModal() {
@@ -172,6 +183,20 @@ const Home: React.FC = () => {
                               Docs
                             </span>
                           </a>
+                        </span>
+                      </li>
+                      <li
+                        className="transition-all transform ease-in-out duration-500 my-6 opacity-0 -translate-y-full blur delay-nav-out-3 delay-nav-out-3 lg:delay-nav-out-0 no-blur-lg lg:translate-y-0 lg:opacity-100">
+                        <span>
+                          <button
+                            type="button"
+                            className="text-white font-roboto font-thin  text-28  no-focus transition-opacity duration-150 hover:opacity-50 block  lg:font-black lg:text-14 leading-none lg:uppercase"
+                            onClick={handleAddToken}
+                          >
+                            <span tabIndex={-1} className="kb-focus flex">
+                              Add Token
+                            </span>
+                          </button>
                         </span>
                       </li>
                     </ul>
