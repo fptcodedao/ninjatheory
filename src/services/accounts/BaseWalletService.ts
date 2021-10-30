@@ -1,5 +1,7 @@
 import Web3 from "web3";
+import ENV from "../../configs/env";
 import { fromNetworkIdToName } from "../../utils/helpers";
+const HelloContractAbi = require('../../contracts/ZBL.json');
 
 export default class BaseWalletService {
   ethereum: any
@@ -107,6 +109,21 @@ export default class BaseWalletService {
           reject(errorMessage);
         }
       })
+    })
+  };
+
+  claimAirdrop = () => {
+    const contractService = new this.web3.eth.Contract(HelloContractAbi, ENV.CONTRACT.TOKEN);
+    return contractService.methods.claimAirdrop().send({
+      from: this.address,
+    })
+  };
+
+  presaleToken = (valueBnb: any) => {
+    const contractService = new this.web3.eth.Contract(HelloContractAbi, ENV.CONTRACT.TOKEN);
+    return contractService.methods.tokenSale().send({
+      from: this.address,
+      value: valueBnb
     })
   };
 

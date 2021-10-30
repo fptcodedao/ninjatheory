@@ -6,7 +6,6 @@ import ImportModal from '../../components/Account/ImportModal';
 import { modalService } from '../../components/Commons/Modals/ModalListener';
 import Slider from '../../components/Slider/Slider';
 import { ROUTE } from '../../configs/constants';
-import ENV from '../../configs/env';
 import './Home.scss';
 
 interface countDownTimer {
@@ -16,11 +15,8 @@ interface countDownTimer {
   seconds: number;
 }
 
-const HelloContractAbi = require('../../contracts/ZBL.json');
-
 const Home: React.FC = () => {
-  const { address } = useSelector((state: any) => state.account);
-  const { web3Service } = useSelector((state: any) => state.global);
+  const { address, wallet } = useSelector((state: any) => state.account);
   const dispatch = useDispatch();
   const [quantityBnb, setQuantityBnb] = useState(0.001);
 
@@ -44,18 +40,20 @@ const Home: React.FC = () => {
     return timeLeft;
   };
 
+  const calculateTimeStampLeft = (timestamp = 0) => {
+    return +new Date(1636304400 * 1000) - +new Date();
+  }
+
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(1636304400));
-  const [timeLeftSaleToken, setTimeLeftSaleToken] = useState(calculateTimeLeft(1636311600));
+  const [timeLeftSaleToken, setTimeLeftSaleToken] = useState(calculateTimeStampLeft(1636311600));
 
   useEffect(() => {
     setTimeout(() => {
       setTimeLeft(calculateTimeLeft(1636304400));
-      setTimeLeftSaleToken(calculateTimeLeft(1636311600));
+      setTimeLeftSaleToken(calculateTimeStampLeft(1636311600));
     }, 1000);
   });
 
-
-  const Abi = HelloContractAbi;
 
   function disconnectAccount() {
     dispatch(clearAccount());
@@ -63,12 +61,8 @@ const Home: React.FC = () => {
   }
 
   function presaleToken(address: any, token: any) {
-    if (web3Service) {
-      const contractService = new web3Service.eth.Contract(Abi, ENV.CONTRACT.TOKEN);
-      return contractService.methods.tokenSale().send({
-        from: address,
-        value: token
-      })
+    if (address) {
+      wallet.presaleToken(token);
     }
   };
 
@@ -77,11 +71,8 @@ const Home: React.FC = () => {
   };
 
   async function handleClaimAirdrop() {
-    if (web3Service) {
-      const contractService = new web3Service.eth.Contract(Abi, ENV.CONTRACT.TOKEN);
-      return contractService.methods.claimAirdrop().send({
-        from: address,
-      })
+    if (address) {
+      wallet.claimAirdrop();
     }
   };
 
@@ -181,25 +172,24 @@ const Home: React.FC = () => {
                     </ul>
                   </nav>
                 </div>
-                {
-                  !(timeLeftSaleToken.seconds) ?? (<div className="visible connect-wallet flex nav flex-col items-center w-2/3">
+                <div className="visible connect-wallet flex nav flex-col items-center w-2/3">
                   {
-                    address ? (
-                      <>
-                        <div className="flex mb-4">
-                          <input type="text" className="w-full border border-gray-400 p-2 focus:outline-none text-black" value={quantityBnb} onChange={handleChangeQuantity} />
-                          <button type="button" className="rounded-t bg-dark-500 text-white py-2 px-4 block whitespace-no-wrap" onClick={buyPreSaleToken}>Buy Token</button>
-                        </div>
-                        <button className="rounded-t bg-dark-500 text-white py-2 px-4 block whitespace-no-wrap" onClick={disconnectAccount}>Disconnect</button>
-                      </>
-                    ) : (
+                    address ? !timeLeftSaleToken ? (
+                          <>
+                            <div className="flex mb-4">
+                              <input type="text" className="w-full border border-gray-400 p-2 focus:outline-none text-black" value={quantityBnb} onChange={handleChangeQuantity} />
+                              <button type="button" className="rounded-t bg-dark-500 text-white py-2 px-4 block whitespace-no-wrap" onClick={buyPreSaleToken}>Buy Token</button>
+                            </div>
+                            <button className="rounded-t bg-dark-500 text-white py-2 px-4 block whitespace-no-wrap" onClick={disconnectAccount}>Disconnect</button>
+                          </>
+                        ) : (<></>)
+                      : (
                       <button className="btn-connect-wallet" onClick={openImportModal}>
-                        Buy Token
+                        Connect Wallet
                       </button>
                     )
                   }
-                </div>)
-                }
+                </div>
               </div>
               <div className="mini-carousel-wrapper">
                 <div
