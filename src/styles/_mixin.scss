@@ -65,32 +65,30 @@
 			position: absolute;
 			height: 100%;
 			width: 50%;
-			transform: skewX(30deg);
+			transform: skewX(0deg);
 			transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 			z-index: -2;
+			top: 0;
 		}
 		&::before {
 			background-color: red;
-			top: -1rem;
-			left: 0rem;
+			left: 8.75rem;
 		}
 		&::after {
 			background-color: $colorRight;
 			top: 1rem;
 			left: 8rem;
 		}
-		&:hover {
-			&::before,
-			&::after {
-				top: 0;
-				transform: skewx(0deg);
-			}
-			&::after {
-				left: 0rem;
-			}
-			&::before {
-				left: 8.75rem;
-			}
+		&::before,
+		&::after {
+			top: 0;
+			transform: skewx(0deg);
+		}
+		&::after {
+			left: 0rem;
+		}
+		&::before {
+			left: 8.75rem;
 		}
 	}
 }

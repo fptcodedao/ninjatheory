@@ -232,6 +232,7 @@ const Home: React.FC = () => {
                         className="text-center"
                         style={{ opacity: 1, transform: "translate(0px, 0px)" }}
                       >
+                        <h2 className="airdrop-title">Airdrop will end later</h2>
                         <div id="countdown">
                           <ul>
                             <li><span id="days">{timeLeft.days}</span>days</li>
