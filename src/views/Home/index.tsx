@@ -209,22 +209,22 @@ const Home: React.FC = () => {
                   style={{ opacity: 1, visibility: "inherit" }}
                 >
                   <div className="carousel-wrapper relative">
-                    <div className={timeLeftSaleToken ? 'mini-slide presale' : 'mini-slide'}>
+                    <div className={!timeLeftSaleToken ? 'mini-slide presale' : 'mini-slide'}>
                       {
-                        !timeLeft ? (
+                        timeLeft ? (
                           <div
                             className="text-center"
                             style={{ opacity: 1, transform: "translate(0px, 0px)" }}
                           >
                             <h2 className="airdrop-title">Airdrop will end later</h2>
-                            {/* <div id="countdown">
+                            <div id="countdown">
                               <ul>
                                 <li><span id="days">{timeLeft.days}</span>days</li>
                                 <li><span id="hours">{timeLeft.hours}</span>Hours</li>
                                 <li><span id="minutes">{timeLeft.minutes}</span>Minutes</li>
                                 <li><span id="seconds">{timeLeft.seconds}</span>Seconds</li>
                               </ul>
-                            </div> */}
+                            </div>
                             {
                               address ? (
                                 <button className="btn-claim-token" onClick={handleClaimAirdrop}>
@@ -240,7 +240,7 @@ const Home: React.FC = () => {
                         ) : (<></>)
                       }
                       {
-                        timeLeftSaleToken ? (
+                        !timeLeftSaleToken ? (
                           <div
                             className="text-center"
                             style={{ opacity: 1, transform: "translate(0px, 0px)" }}
