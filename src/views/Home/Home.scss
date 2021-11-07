@@ -111,7 +111,6 @@
   padding-left: 10px;
   outline: none;
   box-shadow: none;
-  min-width: 300px;
 }
 
 #countdown {
@@ -156,6 +155,10 @@
 .airdrop-title {
   font-size: 40px;
   font-weight: bold;
+  &.presale {
+    color: red;
+    font-size: 30px;
+  }
 }
 @media screen and (max-width: 1024px) {
   .home-navigation-wrapper {
@@ -163,4 +166,21 @@
     display: flex;
     justify-content: center;
   }
+}
+.sub-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.whitespace-no-wrap {
+  margin: 0 auto;
+}
+.mini-slide.presale {
+  background: #4c4c4c6b;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 450px;
+}
+.justify-content-center {
+  justify-content: center;
 }

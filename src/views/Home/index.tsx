@@ -202,24 +202,6 @@ const Home: React.FC = () => {
                     </ul>
                   </nav>
                 </div>
-                <div className="visible connect-wallet flex nav flex-col items-center w-2/3">
-                  {
-                    address ? !timeLeftSaleToken ? (
-                          <>
-                            <div className="flex mb-4">
-                              <input type="text" className="w-full border border-gray-400 p-2 focus:outline-none text-black" value={quantityBnb} onChange={handleChangeQuantity} />
-                              <button type="button" className="rounded-t bg-dark-500 text-white py-2 px-4 block whitespace-no-wrap" onClick={buyPreSaleToken}>Buy Token</button>
-                            </div>
-                            <button className="rounded-t bg-dark-500 text-white py-2 px-4 block whitespace-no-wrap" onClick={disconnectAccount}>Disconnect</button>
-                          </>
-                        ) : (<></>)
-                      : (
-                      <button className="btn-connect-wallet" onClick={openImportModal}>
-                        Connect Wallet
-                      </button>
-                    )
-                  }
-                </div>
               </div>
               <div className="mini-carousel-wrapper">
                 <div
@@ -227,32 +209,63 @@ const Home: React.FC = () => {
                   style={{ opacity: 1, visibility: "inherit" }}
                 >
                   <div className="carousel-wrapper relative">
-                    <div className="mini-slide">
-                      <div
-                        className="text-center"
-                        style={{ opacity: 1, transform: "translate(0px, 0px)" }}
-                      >
-                        <h2 className="airdrop-title">Airdrop will end later</h2>
-                        <div id="countdown">
-                          <ul>
-                            <li><span id="days">{timeLeft.days}</span>days</li>
-                            <li><span id="hours">{timeLeft.hours}</span>Hours</li>
-                            <li><span id="minutes">{timeLeft.minutes}</span>Minutes</li>
-                            <li><span id="seconds">{timeLeft.seconds}</span>Seconds</li>
-                          </ul>
-                        </div>
-                        {
-                          address ? (
-                            <button className="btn-claim-token" onClick={handleClaimAirdrop}>
-                              Claim Airdrop
-                            </button>
-                          ) : (
-                            <button className="btn-claim-token" onClick={openImportModal}>
-                              Claim Airdrop
-                            </button>
-                          )
-                        }
-                      </div>
+                    <div className={timeLeftSaleToken ? 'mini-slide presale' : 'mini-slide'}>
+                      {
+                        !timeLeft ? (
+                          <div
+                            className="text-center"
+                            style={{ opacity: 1, transform: "translate(0px, 0px)" }}
+                          >
+                            <h2 className="airdrop-title">Airdrop will end later</h2>
+                            {/* <div id="countdown">
+                              <ul>
+                                <li><span id="days">{timeLeft.days}</span>days</li>
+                                <li><span id="hours">{timeLeft.hours}</span>Hours</li>
+                                <li><span id="minutes">{timeLeft.minutes}</span>Minutes</li>
+                                <li><span id="seconds">{timeLeft.seconds}</span>Seconds</li>
+                              </ul>
+                            </div> */}
+                            {
+                              address ? (
+                                <button className="btn-claim-token" onClick={handleClaimAirdrop}>
+                                  Claim Airdrop
+                                </button>
+                              ) : (
+                                <button className="btn-claim-token" onClick={openImportModal}>
+                                  Claim Airdrop
+                                </button>
+                              )
+                            }
+                          </div>
+                        ) : (<></>)
+                      }
+                      {
+                        timeLeftSaleToken ? (
+                          <div
+                            className="text-center"
+                            style={{ opacity: 1, transform: "translate(0px, 0px)" }}
+                          >
+                            <h2 className="airdrop-title presale">Presale Zomebie Life Token</h2>
+                            <h3 className="sub-title">1 BNB = 25,000 ZBL</h3>
+                            {
+                              address ? (
+                                <>
+                                  <div className="flex mb-4 justify-content-center">
+                                    <input type="text" className="w-50 border border-gray-400 p-2 focus:outline-none text-black" value={quantityBnb} onChange={handleChangeQuantity} />
+                                    <button type="button" className="rounded-t bg-dark-500 text-white py-2 px-4 block" onClick={buyPreSaleToken}>Buy Token</button>
+                                  </div>
+                                  <p style={{marginBottom: '10px'}}>Max cap per wallet — 50,000 ZBL tokens (2 BNB) Min buy: 250 ZBL tokens (0.01 BNB)</p>
+                                  <button className="rounded-t bg-dark-500 text-white py-2 px-4 my-3 block whitespace-no-wrap" onClick={disconnectAccount}>Disconnect</button>
+                                </>
+                              ) : (
+                                <button className="btn-claim-token" onClick={openImportModal}>
+                                  Buy Token
+                                </button>
+                              )
+                            }
+                          </div>
+                        ) : (<></>)
+                      }
                     </div>
                     <div className="mini-slide hidden">
                       <div
