@@ -75,7 +75,7 @@ const Header: React.FC = () => {
           <nav id="navigation" aria-label="main navigation" className="pt-10 md:pt-0">
             <ul className="flex nav flex-col items-center group landscapemobile:flex-row landscapemobile:justify-around">
               <li
-                className="transition-all transform ease-in-out duration-500 my-6 translate-y-0 opacity-100 no-blur delay-nav-in-1 delay-nav-out-1 lg:delay-nav-out-0 no-blur-lg lg:translate-y-0 lg:opacity-100"
+                className="transition-all transform ease-in-out duration-500 my-4 translate-y-0 opacity-100 no-blur delay-nav-in-1 delay-nav-out-1 lg:delay-nav-out-0 no-blur-lg lg:translate-y-0 lg:opacity-100"
                 style={{}}
               >
                 <span>
@@ -93,7 +93,7 @@ const Header: React.FC = () => {
                 </span>
               </li>
               <li
-                className="transition-all transform ease-in-out duration-500 my-6 translate-y-0 opacity-100 no-blur delay-nav-in-2 delay-nav-out-2 lg:delay-nav-out-0 no-blur-lg lg:translate-y-0 lg:opacity-100"
+                className="transition-all transform ease-in-out duration-500 my-4 translate-y-0 opacity-100 no-blur delay-nav-in-2 delay-nav-out-2 lg:delay-nav-out-0 no-blur-lg lg:translate-y-0 lg:opacity-100"
                 style={{}}
               >
                 <span>
@@ -110,7 +110,7 @@ const Header: React.FC = () => {
                 </span>
               </li>
               <li
-                className="transition-all transform ease-in-out duration-500 my-6 translate-y-0 opacity-100 no-blur delay-nav-in-3 delay-nav-out-3 lg:delay-nav-out-0 no-blur-lg lg:translate-y-0 lg:opacity-100"
+                className="transition-all transform ease-in-out duration-500 my-3 translate-y-0 opacity-100 no-blur delay-nav-in-3 delay-nav-out-3 lg:delay-nav-out-0 no-blur-lg lg:translate-y-0 lg:opacity-100"
                 style={{}}
               >
                 <span>
@@ -127,7 +127,7 @@ const Header: React.FC = () => {
                 </span>
               </li>
               <li
-                className="transition-all transform ease-in-out duration-500 my-6 translate-y-0 opacity-100 no-blur delay-nav-in-3 delay-nav-out-3 lg:delay-nav-out-0 no-blur-lg lg:translate-y-0 lg:opacity-100"
+                className="transition-all transform ease-in-out duration-500 my-3 translate-y-0 opacity-100 no-blur delay-nav-in-3 delay-nav-out-3 lg:delay-nav-out-0 no-blur-lg lg:translate-y-0 lg:opacity-100"
                 style={{}}
               >
                 <span>
@@ -227,17 +227,6 @@ const Header: React.FC = () => {
                     Code of Conduct
                   </span>
                 </a>
-              </li>
-              <li className="py-2 md:py-3 md:mr-3">
-                <Link
-                  to="/candidate-privacy-policy"
-                  className="text-white font-roboto md:font-black uppercase text-14 block no-focus text-center md:text-left transition-opacity hover:opacity-50 duration-150"
-                >
-                  <span tabIndex={-1} className="kb-focus flex">
-
-                    Candidate Privacy Policy
-                  </span>
-                </Link>
               </li>
               <li className="py-2 md:py-3 md:mr-3">
                 <Link

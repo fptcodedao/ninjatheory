@@ -21,7 +21,7 @@ const Home: React.FC = () => {
   const [quantityBnb, setQuantityBnb] = useState(0.001);
 
   const calculateTimeLeft = (timestamp = 0): countDownTimer => {
-    const difference = +new Date(1636304400 * 1000) - +new Date();
+    const difference = +new Date(timestamp * 1000) - +new Date();
     let timeLeft = {
       days: 0,
       hours: 0,
@@ -45,11 +45,13 @@ const Home: React.FC = () => {
   }
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(1636304400));
+  const [timeLeftSale, setTimeLeftSale] = useState(calculateTimeLeft(1636311600));
   const [timeLeftSaleToken, setTimeLeftSaleToken] = useState(calculateTimeStampLeft(1636311600));
 
   useEffect(() => {
     setTimeout(() => {
       setTimeLeft(calculateTimeLeft(1636304400));
+      setTimeLeftSale(calculateTimeLeft(1636311600));
       setTimeLeftSaleToken(calculateTimeStampLeft(1636311600));
     }, 1000);
   });
@@ -211,7 +213,7 @@ const Home: React.FC = () => {
                   <div className="carousel-wrapper relative">
                     <div className={!timeLeftSaleToken ? 'mini-slide presale' : 'mini-slide'}>
                       {
-                        timeLeft ? (
+                        (timeLeft.days || timeLeft.hours || timeLeft.minutes || timeLeft.seconds) ? (
                           <div
                             className="text-center"
                             style={{ opacity: 1, transform: "translate(0px, 0px)" }}
@@ -236,6 +238,24 @@ const Home: React.FC = () => {
                                 </button>
                               )
                             }
+                          </div>
+                        ) : (<></>)
+                      }
+                      {
+                        (!(timeLeft.days || timeLeft.hours || timeLeft.minutes || timeLeft.seconds) && (timeLeftSale.days || timeLeftSale.hours || timeLeftSale.minutes || timeLeftSale.seconds)) ? (
+                          <div
+                            className="text-center"
+                            style={{ opacity: 1, transform: "translate(0px, 0px)" }}
+                          >
+                            <h2 className="airdrop-title">Pre-sale is about to start after time</h2>
+                            <div id="countdown">
+                              <ul>
+                                <li><span id="days">{timeLeftSale.days}</span>days</li>
+                                <li><span id="hours">{timeLeftSale.hours}</span>Hours</li>
+                                <li><span id="minutes">{timeLeftSale.minutes}</span>Minutes</li>
+                                <li><span id="seconds">{timeLeftSale.seconds}</span>Seconds</li>
+                              </ul>
+                            </div>
                           </div>
                         ) : (<></>)
                       }
