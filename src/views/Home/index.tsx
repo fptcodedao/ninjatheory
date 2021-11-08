@@ -19,6 +19,7 @@ const Home: React.FC = () => {
   const { address, wallet } = useSelector((state: any) => state.account);
   const dispatch = useDispatch();
   const [quantityBnb, setQuantityBnb] = useState(0.001);
+  const [disableSale, setDisableSale] = useState(false);
 
   const calculateTimeLeft = (timestamp = 0): countDownTimer => {
     const difference = +new Date(timestamp * 1000) - +new Date();
@@ -63,14 +64,15 @@ const Home: React.FC = () => {
     localStorage.clear();
   }
 
-  function presaleToken(address: any, token: any) {
-    if (address) {
-      wallet.presaleToken(token);
-    }
-  };
-
   async function buyPreSaleToken() {
-    await presaleToken(address, quantityBnb * Math.pow(10, 18))
+    if (address) {
+      setDisableSale(true)
+      wallet.presaleToken(quantityBnb * Math.pow(10, 18));
+      setDisableSale(false)
+    }
+    setTimeout(function () {
+      window.location.reload();
+    }, 1000)
   };
 
   async function handleClaimAirdrop() {
@@ -273,7 +275,7 @@ const Home: React.FC = () => {
                                 <>
                                   <div className="flex mb-4 justify-content-center">
                                     <input type="text" className="w-50 border border-gray-400 p-2 focus:outline-none text-black" value={quantityBnb} onChange={handleChangeQuantity} />
-                                    <button type="button" className="rounded-t bg-dark-500 text-white py-2 px-4 block" onClick={buyPreSaleToken}>Buy Token</button>
+                                    <button type="button" className="rounded-t bg-dark-500 text-white py-2 px-4 block" onClick={buyPreSaleToken} disabled={disableSale}>Buy Token</button>
                                   </div>
                                   <p style={{marginBottom: '10px'}}>Max cap per wallet — 50,000 ZBL tokens (2 BNB) Min buy: 250 ZBL tokens (0.01 BNB)</p>
                                   <button className="rounded-t bg-dark-500 text-white py-2 px-4 my-3 block whitespace-no-wrap" onClick={disconnectAccount}>Disconnect</button>
