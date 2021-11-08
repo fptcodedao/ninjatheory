@@ -259,28 +259,33 @@ const Home: React.FC = () => {
                           </div>
                         ) : (<></>)
                       }
-                      <div
-                        className="text-center"
-                        style={{ opacity: 1, transform: "translate(0px, 0px)" }}
-                      >
-                        <h2 className="airdrop-title presale">Presale Zomebie Life Token</h2>
-                        <h3 className="sub-title">1 BNB = 25,000 ZBL</h3>
-                        {
-                          address ? (
-                            <>
-                              <div className="flex mb-4 justify-content-center">
-                                <input type="text" className="w-50 border border-gray-400 p-2 focus:outline-none text-black" value={quantityBnb} onChange={handleChangeQuantity} />
-                                <button type="button" className="rounded-t bg-dark-500 text-white py-2 px-4 block" onClick={buyPreSaleToken}>Buy Token</button>
-                              </div>
-                              <p style={{marginBottom: '10px'}}>Max cap per wallet — 50,000 ZBL tokens (2 BNB) Min buy: 250 ZBL tokens (0.01 BNB)</p>
-                              <button className="rounded-t bg-dark-500 text-white py-2 px-4 my-3 block whitespace-no-wrap" onClick={disconnectAccount}>Disconnect</button>
-                            </>
-                          ) : (
-                            <button className="btn-claim-token" onClick={openImportModal}>
-                              Buy Token
-                            </button>
-                          )
-                        }
+                      {
+                        timeLeftSaleToken ? (
+                          <div
+                            className="text-center"
+                            style={{ opacity: 1, transform: "translate(0px, 0px)" }}
+                          >
+                            <h2 className="airdrop-title presale">Presale Zomebie Life Token</h2>
+                            <h3 className="sub-title">1 BNB = 25,000 ZBL</h3>
+                            {
+                              address ? (
+                                <>
+                                  <div className="flex mb-4 justify-content-center">
+                                    <input type="text" className="w-50 border border-gray-400 p-2 focus:outline-none text-black" value={quantityBnb} onChange={handleChangeQuantity} />
+                                    <button type="button" className="rounded-t bg-dark-500 text-white py-2 px-4 block" onClick={buyPreSaleToken}>Buy Token</button>
+                                  </div>
+                                  <p style={{marginBottom: '10px'}}>Max cap per wallet — 50,000 ZBL tokens (2 BNB) Min buy: 250 ZBL tokens (0.01 BNB)</p>
+                                  <button className="rounded-t bg-dark-500 text-white py-2 px-4 my-3 block whitespace-no-wrap" onClick={disconnectAccount}>Disconnect</button>
+                                </>
+                              ) : (
+                                <button className="btn-claim-token" onClick={openImportModal}>
+                                  Buy Token
+                                </button>
+                              )
+                            }
+                          </div>
+                        ) : (<></>)
+                      }
                     </div>
                     <div className="mini-slide hidden">
                       <div
