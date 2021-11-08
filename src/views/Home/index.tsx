@@ -41,7 +41,8 @@ const Home: React.FC = () => {
   };
 
   const calculateTimeStampLeft = (timestamp = 0) => {
-    return +new Date(1636304400 * 1000) - +new Date();
+    const timeLeft = +new Date(1636304400 * 1000) - +new Date();
+    return timeLeft > 0 ? timeLeft : 0;
   }
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(1636304400));
@@ -260,7 +261,7 @@ const Home: React.FC = () => {
                         ) : (<></>)
                       }
                       {
-                        timeLeftSaleToken ? (
+                        !timeLeftSaleToken ? (
                           <div
                             className="text-center"
                             style={{ opacity: 1, transform: "translate(0px, 0px)" }}
